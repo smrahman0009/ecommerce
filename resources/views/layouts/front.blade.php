@@ -80,7 +80,7 @@
     </div>
 
     <!-- End Books products grid -->
-    @yield('product')
+    @yield('content')
 </div>
 
 <!-- Footer -->

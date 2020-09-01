@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('product')
+@section('content')
     
 <div class="container">
     <div class="row pt120">
@@ -17,7 +17,9 @@
                         </div>
 
                         <div class="books-item-info">
-                        <h5 class="books-title">{{$product->name}}</h5>
+                        <a href="{{route('product.details',$product->id)}}">
+                            <h5 class="books-title">{{$product->name}}</h5>
+                        </a>
 
                         <div class="books-price">${{$product->price}}</div>
                         </div>

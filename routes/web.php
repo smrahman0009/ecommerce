@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','FrontEndController@index')->name('index');
+Route::get('product/details/{id}','FrontEndController@product')->name('product.details');
 
 Auth::routes();
 

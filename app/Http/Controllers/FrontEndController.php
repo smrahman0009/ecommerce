@@ -11,4 +11,9 @@ class FrontEndController extends Controller
         $products = Product::paginate(3);
         return view('index')->with('products',$products);
     }
+
+    public function product($id){
+        $product = Product::find($id);
+        return view('product')->with('product',$product);
+    }
 }

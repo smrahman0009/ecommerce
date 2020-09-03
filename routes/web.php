@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','FrontEndController@index')->name('index');
 Route::get('product/details/{id}','FrontEndController@product')->name('product.details');
 
+Route::post('cart/add/','ShoppingController@addToCart')->name('cart.add');
+Route::get('cart/auick/add/{id}','ShoppingController@quickAddToCart')->name('cart.quick.add');
+Route::get('cart/','ShoppingController@viewCart')->name('cart.view');
+Route::get('cart/remove/{rowId}','ShoppingController@removeItem')->name('cart.remove');
+Route::get('cart/increment/{rowId}/{quantity}','ShoppingController@increment')->name('cart.increment');
+Route::get('cart/decrement/{rowId}/{quantity}','ShoppingController@decrement')->name('cart.decrement');
+
+Route::get('cart/checkout/','ShoppingController@cartCheckout')->name('cart.checkout');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

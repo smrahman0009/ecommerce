@@ -89,13 +89,14 @@
 							</a>
 							
 							<span style="float: right;">
-								<form action="/your-server-side-code" method="POST">
+							<form action="{{route('cart.pay')}}" method="POST">
+									@csrf
 									  <script
 									    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-									    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-									    data-amount="999"
-									    data-name="Stripe.com"
-									    data-description="Widget"
+									    data-key="pk_test_51HP6rhGvCJcmORwGCQqNX3hgPy52BHw92BfKs0QjZRDwwuMS2WCppBLb6E4j9K4iFzsOBCUkhWcaTfkqfMJqeoQw00ccaW7jqw"
+										data-amount="{{Cart::total() * 100}}"
+									    data-name="Easyshop.com"
+									    data-description="Make your shop easy"
 									    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
 									    data-locale="auto"
 									    data-zip-code="true">

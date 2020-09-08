@@ -25,6 +25,7 @@ Route::get('cart/increment/{rowId}/{quantity}','ShoppingController@increment')->
 Route::get('cart/decrement/{rowId}/{quantity}','ShoppingController@decrement')->name('cart.decrement');
 
 Route::get('cart/checkout/','ShoppingController@cartCheckout')->name('cart.checkout');
+Route::post('cart/checkout/','ShoppingController@pay')->name('cart.pay');
 
 Auth::routes();
 

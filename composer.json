@@ -17,7 +17,8 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
-        "olimortimer/laravelshoppingcart": "^4.0"
+        "olimortimer/laravelshoppingcart": "^4.0",
+        "stripe/stripe-php": "^7.51"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

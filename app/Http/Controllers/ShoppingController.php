@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Cart;
 use App\Product;
+use Stripe\Stripe;
+use Stripe\PaymentIntent;
+use Stripe\Charge;
 use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 
@@ -67,5 +70,18 @@ class ShoppingController extends Controller
 
     public function cartCheckout(){
         return view('checkout');
+    }
+
+    public function pay(Request $request){
+        // dd($request->all());
+
+        Stripe::setApiKey('sk_test_51HP6rhGvCJcmORwGuj3nHXJIaEdyuITmW51kgSgB55sgLPfZ1Ips2aSmxA6TQBa6VgeRgLdZcfQla1IAFDEre4Eg005Ud1gPSM');
+
+        $token = $request->stripeToken;
+        $intent = Charge::create([
+        'amount' => 1099,
+        'currency' => 'usd',
+        'source' => $token,
+        ]);
     }
 }
